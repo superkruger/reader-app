@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { ReactReader } from "react-reader";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ position: "relative", height: "100%" }}>
+      {" "}
+      <ReactReader
+        url={"/alice.epub"}
+        title={"Alice in wonderland"}
+        location={"epubcfi(/6/2[cover]!/6)"}
+        locationChanged={epubcifi => console.log(epubcifi)}
+      />
     </div>
   );
 }
